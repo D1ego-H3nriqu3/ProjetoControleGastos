@@ -6,7 +6,7 @@ function sRelatorio(gastos){
     if (gastos.length === 0){
         console.log("\nNão há o que salvar!")
     }else{
-        fs.appendFileSync(`relatório.txt`, `Relátorio de gastos:\n${formatarLista(gastos).join("\n")}\n${calcTotal(gastos)}`)
+        fs.appendFileSync(`relatorio.txt`, `Relátorio de gastos:\n${formatarLista(gastos).join("\n")}\n${calcTotal(gastos)}`)
         console.log("\nRelatório salvo em relatorio.txt!")
     }
 }
