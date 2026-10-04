@@ -4,6 +4,7 @@ import sairSistema from "./sair.js";
 import registrarG from "./registrarGasto.js";
 import formatarLista from "./formatarGasto.js";
 import calcTotal from "./calcTotal.js";
+import sRelatorio from "./salvarRelatorio.js";
 
 let indice = true
 
@@ -28,7 +29,7 @@ do{
         console.log("\n" + calcTotal(gastos))
         break
         case("4"):
-
+        sRelatorio(gastos)
         break
         case("0"):
         indice = sairSistema(indice)
@@ -58,9 +59,6 @@ do{
             console.log("\nNão há nada para se ver aqui!")
         }else{
             console.log("\n")
-        for(let i = 0; i < gastos.length; i++){
-            let gastoAtual = gastos[i]
-            console.log(formatarLista(gastoAtual, i))
-        }
+            console.log(formatarLista(gastos).join("\n"))
     }
     }
