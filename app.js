@@ -3,6 +3,7 @@ const prompt = PromptSync()
 import sairSistema from "./sair.js";
 import registrarG from "./registrarGasto.js";
 import formatarLista from "./formatarGasto.js";
+import calcTotal from "./calcTotal.js";
 
 let indice = true
 
@@ -24,7 +25,7 @@ do{
         listarGastos()
         break
         case("3"):
-
+        console.log("\n" + calcTotal(gastos))
         break
         case("4"):
 
