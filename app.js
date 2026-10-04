@@ -2,6 +2,7 @@ import PromptSync from "prompt-sync";
 const prompt = PromptSync()
 import sairSistema from "./sair.js";
 import registrarG from "./registrarGasto.js";
+import formatarLista from "./formatarGasto.js";
 
 let indice = true
 
@@ -20,7 +21,7 @@ do{
         criarGasto()
         break
         case("2"):
-
+        listarGastos()
         break
         case("3"):
 
@@ -49,4 +50,16 @@ do{
         }
     let gasto = registrarG(descricao,valor)
     gastos.push(gasto)
+    }
+
+    function listarGastos(){
+        if (gastos.length === 0){
+            console.log("\nNão há nada para se ver aqui!")
+        }else{
+            console.log("\n")
+        for(let i = 0; i < gastos.length; i++){
+            let gastoAtual = gastos[i]
+            console.log(formatarLista(gastoAtual, i))
+        }
+    }
     }
